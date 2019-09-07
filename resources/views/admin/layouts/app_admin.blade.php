@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://use.fontawesome.com/fcba3aa423.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -37,7 +38,7 @@
                         <a href="#" class="nav-link dropdown-toggle pt-2" data-toggle="dropdown" role="button"
                         aria-expanded="false">Блог</a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a class="dropdown-item" href="#">Категории</a></li>
+                            <li><a class="dropdown-item" href="{{route('admin.category.index')}}">Категории</a></li>
                             <li><a class="dropdown-item" href="#">Материалы</a></li>
                         </ul>
                     </li>
@@ -62,12 +63,14 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('admin.index') }}">
+                                    {{ __('Админ панель') }}
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
