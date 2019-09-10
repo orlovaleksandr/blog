@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="card">
-                    <a href="#" class="btn btn-block btn-light bg-white card-header">Создать категорию</a>
+                    <a href="{{route('admin.category.create')}}" class="btn btn-block btn-light bg-white card-header">Создать категорию</a>
                     <a href="" class="card-body text-secondary">
                         <h4 class="card-title">Категория первая</h4>
                         <p class="card-text">
