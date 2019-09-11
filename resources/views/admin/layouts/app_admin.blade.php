@@ -39,7 +39,7 @@
                         aria-expanded="false">Блог</a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a class="dropdown-item" href="{{route('admin.category.index')}}">Категории</a></li>
-                            <li><a class="dropdown-item" href="#">Материалы</a></li>
+                            <li><a class="dropdown-item" href="{{route('admin.article.index')}}">Материалы</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -86,5 +86,7 @@
         @yield('content')
     </main>
 </div>
+<script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+<script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>
