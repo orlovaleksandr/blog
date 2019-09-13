@@ -12,7 +12,7 @@ class Article extends Model
         'meta_title', 'meta_description', 'meta_keyword', 'published', 'created_by', 'modified_by'];
 
     // Mutator
-    public function setSlugAttribute($value){
+    public function setSlugAttribute(){
         $this->attributes['slug'] = Str::slug(mb_substr($this->title, 0, 40) . "-" . Carbon::now()->format('dmyHi'), '-');
     }
 
@@ -20,5 +20,10 @@ class Article extends Model
     public function categories()
     {
         return $this->morphToMany(Category::class, 'categoryable');
+    }
+
+    public function scopeLastArticles($query, $count)
+    {
+        return $query->orderBy('created_by', 'desc')->take($count)->get();
     }
 }

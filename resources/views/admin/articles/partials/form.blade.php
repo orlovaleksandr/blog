@@ -44,3 +44,4 @@
 <hr>
 
 <input type="submit" class="btn btn-primary" value="Сохранить">
+<a href="{{url()->previous()}}" class="btn btn-primary">Отмена</a>

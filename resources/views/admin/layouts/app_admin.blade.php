@@ -12,6 +12,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://use.fontawesome.com/fcba3aa423.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -34,9 +35,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav mr-auto">
-                    <li class="dropdown nav-item">
-                        <a href="#" class="nav-link dropdown-toggle pt-2" data-toggle="dropdown" role="button"
-                        aria-expanded="false">Блог</a>
+                    <li class="nav-item"><a class="nav-link" href="{{route('admin.index')}}">Панель состояния</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Блог</a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a class="dropdown-item" href="{{route('admin.category.index')}}">Категории</a></li>
                             <li><a class="dropdown-item" href="{{route('admin.article.index')}}">Материалы</a></li>
@@ -86,7 +87,5 @@
         @yield('content')
     </main>
 </div>
-<script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
-<script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>

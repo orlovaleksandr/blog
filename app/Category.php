@@ -19,4 +19,15 @@ class Category extends Model
     public function children(){
         return $this->hasMany(self::class, 'parent_id');
     }
+
+    //Polymorphic relation with Articles
+    public function articles()
+    {
+        return $this->morphedByMany(Article::class, 'categoryable');
+    }
+
+    public function scopeLastCategories($query, $count)
+    {
+        return $query->orderBy('created_by', 'desc')->take($count)->get();
+    }
 }

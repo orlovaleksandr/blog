@@ -28,3 +28,4 @@
 <hr>
 
 <input type="submit" class="btn btn-primary" value="Сохранить">
+<a href="{{route('admin.category.index')}}" class="btn btn-primary">Отмена</a>

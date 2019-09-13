@@ -5,12 +5,28 @@
  */
 
 require('./bootstrap');
-
 $(document).ready(function () {
-    CKEDITOR.replace( 'description_short' );
-    CKEDITOR.replace( 'description' );
-});
+    if ($('#description').length || $('#description_short').length) {
+        ClassicEditor
+            .create(document.querySelector('#description'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
 
+        ClassicEditor
+            .create(document.querySelector('#description_short'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
+
+});
 window.Vue = require('vue');
 
 /**
